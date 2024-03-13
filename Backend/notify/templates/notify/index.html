@@ -18,7 +18,7 @@
     </style>
   </head>
   <body>
-    <video id="videoElement" autoplay><source src="/video_feed" /></video>
+    <img src="{% url "video_feed" %}" />
     <br />
     <h1>Send WhatsApp Alert</h1>
     <form action="/" method="POST">
@@ -27,6 +27,7 @@
       <button type="submit">Send</button>
     </form>
 
+    {% comment %}
     <script>
       navigator.mediaDevices
         .getUserMedia({ video: true })
@@ -38,5 +39,6 @@
           console.error("Error accessing the camera:", error);
         });
     </script>
+    {% endcomment %}
   </body>
 </html>
