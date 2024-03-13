@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Send Notification</title>
+
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        font-family: Montserrat;
+        background: LightGray;
+      }
+    </style>
+  </head>
+  <body>
+    <video id="videoElement" autoplay><source src="/video_feed" /></video>
+    <br />
+    <h1>Send WhatsApp Alert</h1>
+    <form action="/" method="POST">
+      {% csrf_token %}
+      <input type="text" name="message" autocomplete="off" />
+      <button type="submit">Send</button>
+    </form>
+
+    <script>
+      navigator.mediaDevices
+        .getUserMedia({ video: true })
+        .then(function (stream) {
+          var videoElement = document.getElementById("videoElement");
+          videoElement.srcObject = stream;
+        })
+        .catch(function (error) {
+          console.error("Error accessing the camera:", error);
+        });
+    </script>
+  </body>
+</html>
