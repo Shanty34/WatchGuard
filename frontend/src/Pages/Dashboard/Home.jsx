@@ -1,9 +1,19 @@
 import React from 'react'
 
+
+
 export default function Home() {
-  return (
-    <div className='font-bold'>
-        Home
-    </div>
-  )
+    return (
+        <div className=''>
+            
+            <div className=''>
+            </div>
+            <div className=''>
+                   
+
+
+            </div>
+
+        </div>
+    )
 }

@@ -1,6 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./Pages/Dashboard/Home";
 import MainLayout from "./Pages/More/MainLayout";
+import Monitoring from "./Pages/Monitoring/Monitoring";
 export default function App(){
     const router = createBrowserRouter([
         {
@@ -11,10 +12,10 @@ export default function App(){
               path: "/",
               element: <Home/>,
             },
-            // {
-            //   path: "/Search",
-            //   element: <SearchPage/>,
-            // },
+            {
+              path: "/monitor",
+              element: <Monitoring/>,
+            },
             // {
             //   path: "/about",
             //   element: <About/>,
@@ -25,7 +26,7 @@ export default function App(){
         },
       ]);
       return (
-        <div className="App">
+        <div className="">
           <RouterProvider router={router}/>
         </div>
       )
