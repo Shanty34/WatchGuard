@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom'
 import { ExclamationTriangleIcon, HomeIcon } from '@radix-ui/react-icons'
 import { PiTelevisionSimpleFill } from "react-icons/pi";
 import { useEffect, useState } from "react";
+import { Dash_Card, Mon_Card } from "../../components/Card";
 
 const MainLayout = () => {
   const [allert,setAlert]=useState(false)
@@ -27,7 +28,7 @@ const MainLayout = () => {
   
 
   return (
-    <div className="bg-gray-8 text-gray-5 flex">
+    <div className="bg-gray-9 text-gray-5 flex">
       <div className='bg-gray-7 h-[100vh] py-12 border-e-2 w-52'>
         <h1 className='text-2xl font-bold text-center py-6'>LOGO!</h1>
         <div className='grid grid-flow-row gap-4'>
@@ -43,10 +44,16 @@ const MainLayout = () => {
         Add more conditions for other pages as needed */}
       </div>
       {isButtonActive("/") && (
-          <div className="bg-gray-7 w-96 h-[100vh]">You are on the Dashboard page</div>
+          <div className="bg-gray-7 w-96 h-[100vh]">
+            <Dash_Card/>
+            <Dash_Card/>
+          </div>
         )}
         {isButtonActive("/monitor") && (
-          <div className="absolute right-0 bg-gray-7 w-96 h-[100vh]">You are on the Monitor page</div>
+          <div className="absolute right-0 bg-gray-7 w-96 h-[100vh] pt-24">
+            <Mon_Card/>
+            <Mon_Card/>
+          </div>
         )}
         {allert && (
           <div className="absolute left-52 bg-gray-7 w-96 h-[100vh]">Alert on</div>
