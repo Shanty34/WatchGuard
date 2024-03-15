@@ -14,7 +14,13 @@ export default function App(){
             },
             {
               path: "/monitor",
-              element: <Monitoring/>,
+              children:[
+                {
+                  
+                  path:"/monitor/:Slugs",
+                  element:<Monitoring/>
+                }
+              ]
             },
             // {
             //   path: "/about",
