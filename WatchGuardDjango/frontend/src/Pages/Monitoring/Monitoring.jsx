@@ -13,13 +13,16 @@ import {
 import { Button } from "../../components/ui/button";
 import { ExclamationTriangleIcon } from "@radix-ui/react-icons";
 import { FaWhatsapp } from "react-icons/fa";
+import VideoFeed from "../../components/VideoFeed";
 
 export default function Monitoring() {
   const [isActive, setisActive] = useState(false);
+
   return (
     <div className="grid grid-row-2 place-items-center w-[80vw] h-[100vh]">
       <div className="bg-gray-6 aspect-video w-[44vw]">
-        <img src="http://localhost:8000/video_feed" alt="" />
+        {/* <img src="http://localhost:8000/video_feed" alt="" /> */}
+        <VideoFeed />
       </div>
       <div className="">
         <AlertDialog className="bg-gray-9">

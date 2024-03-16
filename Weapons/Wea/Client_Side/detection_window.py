@@ -8,31 +8,31 @@ import time
 import requests
 from detection import Detection
 
+
 # Manages detection window, starts and stops detection thread
 class DetectionWindow(QMainWindow):
-	def __init__(self):
-		super(DetectionWindow, self).__init__()	
-		loadUi('C:\\Users\\Shanty\\Desktop\\Weapons\\Wea\\Client_Side\\UI\\detection_window.ui', self)
+    def __init__(self):
+        super(DetectionWindow, self).__init__()
+        loadUi("Weapons/Wea/Client_Side/UI/detection_window.ui", self)
 
-		self.stop_detection_button.clicked.connect(self.close)
+        self.stop_detection_button.clicked.connect(self.close)
 
-	# Created detection instance
-	def create_detection_instance(self):
-		self.detection = Detection()
+    # Created detection instance
+    def create_detection_instance(self):
+        self.detection = Detection()
 
-	# Assigns detection output to the label in order to display detection output
-	@pyqtSlot(QImage)
-	def setImage(self, image):
-		self.label_detection.setPixmap(QPixmap.fromImage(image))
+    # Assigns detection output to the label in order to display detection output
+    @pyqtSlot(QImage)
+    def setImage(self, image):
+        self.label_detection.setPixmap(QPixmap.fromImage(image))
 
-	# Starts detection
-	def start_detection(self):
-		self.detection.changePixmap.connect(self.setImage)
-		self.detection.start()
-		self.show()
+    # Starts detection
+    def start_detection(self):
+        self.detection.changePixmap.connect(self.setImage)
+        self.detection.start()
+        self.show()
 
-	# When closed
-	def closeEvent(self, event):
-		self.detection.running = False
-		event.accept()
-
+    # When closed
+    def closeEvent(self, event):
+        self.detection.running = False
+        event.accept()
