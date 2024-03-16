@@ -16,7 +16,7 @@ def homepage(request):
         pywhatkit.sendwhatmsg_instantly(number, message, wait_time=10)
         return redirect("/")
 
-    return render(request, "notify/index.html")
+    return render(request, "index.html")
 
 
 def video_feed(request):
