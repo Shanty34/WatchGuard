@@ -14,6 +14,8 @@ import { useEffect, useState } from "react";
 import { Dash_Card, Mon_Card } from "../../components/Card";
 import { Camera } from "../../assets/Camera";
 import { useDashboardContext } from "../Dashboard/DashboardContext";
+import { Toaster, toast } from "sonner";
+import Toast from "../../components/Toast";
 
 const MainLayout = () => {
   const [allert, setAlert] = useState(false)
@@ -95,6 +97,7 @@ const MainLayout = () => {
           The React Framework – created and maintained by @vercel.
         </HoverCardContent>
       </HoverCard>
+      <Toast/>
     </div>
   );
 };

@@ -15,7 +15,7 @@ import { ExclamationTriangleIcon } from '@radix-ui/react-icons';
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function Monitoring() {
-  const [isActive, setisActive]=useState(true);
+  const [isActive, setisActive]=useState(false);
   return (
     <div className='grid grid-row-2 place-items-center w-[80vw] h-[100vh]'>
       <div className='bg-gray-6 aspect-video w-[46vw]'>
