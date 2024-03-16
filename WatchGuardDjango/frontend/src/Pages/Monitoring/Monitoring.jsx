@@ -14,10 +14,13 @@ import { Button } from "../../components/ui/button";
 import { ExclamationTriangleIcon } from "@radix-ui/react-icons";
 import { FaWhatsapp } from "react-icons/fa";
 import VideoFeed from "../../components/VideoFeed";
+import axios from "axios";
 
 export default function Monitoring() {
   const [isActive, setisActive] = useState(false);
-
+  function handleClick() {
+    axios.get("http://localhost:8000/inform/");
+  }
   return (
     <div className="grid grid-row-2 place-items-center w-[80vw] h-[100vh]">
       <div className="bg-gray-6 aspect-video w-[44vw]">
@@ -39,11 +42,7 @@ export default function Monitoring() {
           )}
           {!isActive && (
             <AlertDialogTrigger asChild>
-              <Button
-                disabled
-                size="lg"
-                className=" text-lg py-6 bg-gray-6 font-bold"
-              >
+              <Button size="lg" className=" text-lg py-6 bg-gray-6 font-bold">
                 Report Crime !
               </Button>
             </AlertDialogTrigger>
@@ -64,11 +63,17 @@ export default function Monitoring() {
               <AlertDialogCancel className="hover:bg-gray-5 hover:text-gray-10">
                 Cancel
               </AlertDialogCancel>
-              <AlertDialogAction className="bg-semantics-1 flex gap-2">
+              <AlertDialogAction
+                onClick={handleClick}
+                className="bg-semantics-1 flex gap-2"
+              >
                 <FaWhatsapp className="scale-150" />
                 Inform Police
               </AlertDialogAction>
-              <AlertDialogAction className="bg-semantics-2 flex gap-2">
+              <AlertDialogAction
+                onClick={handleClick}
+                className="bg-semantics-2 flex gap-2"
+              >
                 <FaWhatsapp className="scale-150" />
                 Inform Building Members
               </AlertDialogAction>
