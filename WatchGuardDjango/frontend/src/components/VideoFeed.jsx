@@ -3,9 +3,9 @@ import axios from "axios";
 
 function VideoFeed() {
   const [imageUrl, setImageUrl] = useState("");
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
+  useEffect(() => {
+    fetchData();
+  }, []);
   const fetchData = async () => {
     try {
       //Get video feed from django URL
@@ -21,7 +21,7 @@ function VideoFeed() {
   };
 
   //On load start fetching camera feed
-  window.addEventListener("load", () => fetchData());
+  // window.addEventListener("load", () => fetchData());
 
   return (
     <div>

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import StreamingHttpResponse, HttpResponse
+from django.http import StreamingHttpResponse, HttpResponse, JsonResponse
 import pywhatkit
 from . import streaming
 import os
@@ -22,12 +22,15 @@ def homepage(request):
     return render(request, "index.html")
 
 
+from django.http import JsonResponse
+import os
+
+
 def alert(request):
     if os.path.exists("Sus/Threat.jpg"):
-        # pywhatkit.sendwhats_image("+918750970535", "Sus/Threat.jpg", "Threat Detected!")
-        return HttpResponse("Threat Detected.")
+        return JsonResponse({"status": 1})
     else:
-        return HttpResponse("No problem")
+        return JsonResponse({"status": 0})
 
 
 def video_feed(request):
