@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import StreamingHttpResponse, HttpResponse
 import pywhatkit
 from . import streaming
+import os
 
 number = "+91xx"
 
@@ -20,7 +21,10 @@ def homepage(request):
 
 
 def alert(request):
-    return HttpResponse("This is from backend")
+    if os.path.exists("Sus/Threat.jpg"):
+        return HttpResponse("Threat Detected.")
+    else:
+        return HttpResponse("No problem")
 
 
 def video_feed(request):
