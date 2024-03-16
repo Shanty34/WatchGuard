@@ -18,7 +18,7 @@ export default function Monitoring() {
   const [isActive, setisActive]=useState(false);
   return (
     <div className='grid grid-row-2 place-items-center w-[80vw] h-[100vh]'>
-      <div className='bg-gray-6 aspect-video w-[46vw]'>
+      <div className='bg-gray-6 aspect-video w-[44vw]'>
       </div>
       <div className=''>
         <AlertDialog className="bg-gray-9">

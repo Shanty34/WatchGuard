@@ -15,13 +15,13 @@ export function Dash_Card(props) {
       };
 
     return (
-        <div className='grid grid-flow-col gap-2 py-2 px-4 hover:bg-gray-6'>
-            <div className="p-1 rounded-3xl bg-base-accent aspect-square grid place-items-center">
-                <CameraIcon className='scale-150' />
+        <div className='grid grid-flow-col gap-2 py-2 px-2 hover:bg-gray-6'>
+            <div className="p-1 rounded-lg bg-base-accent aspect-square grid place-items-center">
+                <CameraIcon className='scale-100' />
             </div>
             <div>
-                <h1>{props.slugs}</h1>
-                <Badge className="border-0 px-5 text-md">{props.Area}</Badge>
+                <h1 className='text-lg'>{props.slugs}</h1>
+                <Badge className="border-0 px-2 text-sm letter-2">{props.Area}</Badge>
             </div>
             {/* Use Switch component and handleSwitchClick function */}
             <Switch id="airplane-mode" onClick={handleToggleVisibility} />
@@ -36,8 +36,8 @@ export function Mon_Card(props) {
                     <CameraIcon className='scale-150' />
                 </div>
                 <div>
-                    <h1>{props.slugs}</h1>
-                    <Badge className="border-0 px-5 text-md">{props.Area}</Badge>
+                    <h1 className='text-md'>{props.slugs}</h1>
+                    <Badge className="border-0 px-5 text-sm">{props.Area}</Badge>
                 </div>
             </div>
         </Link>

@@ -37,7 +37,7 @@ const MainLayout = () => {
   const { cameraVisibility, toggleCameraVisibility } = useDashboardContext();
   return (
     <div className="bg-gray-9 text-gray-5 flex">
-      <div className='bg-gray-7 h-[100vh] py-12 border-e-2 w-52'>
+      <div className='bg-gray-7 h-[100vh] py-12 border-e-2 w-44'>
         <h1 className='text-2xl font-bold text-center py-6'>LOGO!</h1>
         <div className='grid grid-flow-row gap-4'>
           <Link to="/" className={buttonVariants({ variant: "outline", size: "lg",className:"flex gap-2" })}><HomeIcon /> Dashboard</Link>
@@ -52,7 +52,7 @@ const MainLayout = () => {
         Add more conditions for other pages as needed */}
       </div>
       {isButtonActive("/") && (
-        <div className="bg-gray-7 w-96 h-[100vh]">
+        <div className="bg-gray-7 w-72 h-[100vh]">
           {cameraVisibility.map((camera) => (
             <Dash_Card 
             key={camera.slugs} 
@@ -75,7 +75,7 @@ const MainLayout = () => {
         </div>
       )}
       {allert && (
-        <div className="absolute left-52 p-12 text-lg font-semibold divide-y divide-gray-4 bg-gray-7 w-96 h-[100vh]">
+        <div className="absolute left-44 p-12 text-lg font-semibold divide-y divide-gray-4 bg-gray-7 w-72 h-[100vh]">
           <h1 className="text-center py-6 flex gap-4 place-items-center"><ExclamationTriangleIcon className="text-semantics-3 font-extrabold scale-150"/>Alert ON</h1>
           <li className="py-4">
             {}
