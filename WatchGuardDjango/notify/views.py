@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import StreamingHttpResponse
+from django.http import StreamingHttpResponse, HttpResponse
 import pywhatkit
 from . import streaming
 
@@ -17,6 +17,10 @@ def homepage(request):
         return redirect("/")
 
     return render(request, "index.html")
+
+
+def alert(request):
+    return HttpResponse("This is from backend")
 
 
 def video_feed(request):
