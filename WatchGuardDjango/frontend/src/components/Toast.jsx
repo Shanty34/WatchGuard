@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Toaster, toast } from "sonner";
 import axios from "axios";
+import fs from "fs";
 
 function Toast(props) {
   const handleReportClick = () => {
@@ -26,12 +27,24 @@ function Toast(props) {
             onClick: handleReportClick,
           },
         });
+        // updateLogFile(); // Update the log file
       }
     });
   };
 
   // Call the function to check the alert periodically
   const intervalId = setInterval(checkAlert, 1000); // Check every second
+
+  // const updateLogFile = () => {
+  //   axios
+  //     .post("http://localhost:8000/log/", { message: "Alert triggered" })
+  //     .then((res) => {
+  //       console.log("Alert logged on the server");
+  //     })
+  //     .catch((err) => {
+  //       console.error("Error logging alert on the server:", err);
+  //     });
+  // };
 
   return (
     <div>

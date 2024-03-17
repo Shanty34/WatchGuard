@@ -3,6 +3,7 @@ from django.http import StreamingHttpResponse, HttpResponse, JsonResponse
 import pywhatkit
 from . import streaming
 import os
+from django.views.decorators.csrf import csrf_exempt
 
 number = "+91xx"
 
@@ -31,6 +32,14 @@ def alert(request):
         return JsonResponse({"status": 1})
     else:
         return JsonResponse({"status": 0})
+
+
+@csrf_exempt
+def log(request):
+    if request.method == "POST":
+        with open("alerts.json", "a+") as file:
+            file.write("Alert Triggered")
+    return HttpResponse(200)
 
 
 def video_feed(request):

@@ -1,14 +1,14 @@
 import { Outlet, useLocation } from "react-router-dom";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@/components/ui/hover-card"
-import { buttonVariants } from "@/components/ui/button"
+} from "@/components/ui/hover-card";
+import { buttonVariants } from "@/components/ui/button";
 
-import { Link } from 'react-router-dom'
-import { ExclamationTriangleIcon, HomeIcon } from '@radix-ui/react-icons'
+import { Link } from "react-router-dom";
+import { ExclamationTriangleIcon, HomeIcon } from "@radix-ui/react-icons";
 import { PiTelevisionSimpleFill } from "react-icons/pi";
 import { useEffect, useState } from "react";
 import { Dash_Card, Mon_Card } from "../../components/Card";
@@ -18,9 +18,9 @@ import { Toaster, toast } from "sonner";
 import Toast from "../../components/Toast";
 
 const MainLayout = () => {
-  const [allert, setAlert] = useState(false)
+  const [allert, setAlert] = useState(false);
   const location = useLocation();
-  const [Active, setActive] = useState(false)
+  const [Active, setActive] = useState(false);
   const isButtonActive = (to) => {
     return location.pathname === to;
   };
@@ -31,18 +31,35 @@ const MainLayout = () => {
 
     const isMonitorPage = window.location.pathname.includes("/monitor");
     setActive(isMonitorPage);
-
   }, [location.pathname]);
 
   const { cameraVisibility, toggleCameraVisibility } = useDashboardContext();
   return (
     <div className="bg-gray-9 text-gray-5 flex">
-      <div className='bg-gray-7 h-[100vh] py-12 border-e-2 w-44'>
-        <h1 className='text-2xl font-bold text-center py-6'>LOGO!</h1>
-        <div className='grid grid-flow-row gap-4'>
-          <Link to="/" className={buttonVariants({ variant: "outline", size: "lg",className:"flex gap-2" })}><HomeIcon /> Dashboard</Link>
-          <Link to="/monitor" className={buttonVariants({ variant: "outline", size: "lg",className:"flex gap-2"  })}><PiTelevisionSimpleFill /> Monitoring</Link>
-          <button onClick={() => setAlert(!allert)} className={buttonVariants({ variant: "outline", size: "lg" ,className:"flex gap-2" })}><ExclamationTriangleIcon /> Alerts</button>
+      <div className="bg-gray-7 h-[100vh] py-12 border-e-2 w-44">
+        <h1 className="text-2xl font-bold text-center py-6">LOGO!</h1>
+        <div className="grid grid-flow-row gap-4">
+          <Link
+            to="/"
+            className={buttonVariants({
+              variant: "outline",
+              size: "lg",
+              className: "flex gap-2",
+            })}
+          >
+            <HomeIcon /> Dashboard
+          </Link>
+          <Link
+            to="/monitor"
+            className={buttonVariants({
+              variant: "outline",
+              size: "lg",
+              className: "flex gap-2",
+            })}
+          >
+            <PiTelevisionSimpleFill /> Monitoring
+          </Link>
+          {/* <button onClick={() => setAlert(!allert)} className={buttonVariants({ variant: "outline", size: "lg" ,className:"flex gap-2" })}><ExclamationTriangleIcon /> Alerts</button> */}
         </div>
         {/* Conditionally render the block next to the nav menu */}
 
@@ -54,32 +71,29 @@ const MainLayout = () => {
       {isButtonActive("/") && (
         <div className="bg-gray-7 w-72 h-[100vh]">
           {cameraVisibility.map((camera) => (
-            <Dash_Card 
-            key={camera.slugs} 
-            slugs={camera.slugs} 
-            Area={camera.Area} 
-            isVisible={camera.isVisible}
+            <Dash_Card
+              key={camera.slugs}
+              slugs={camera.slugs}
+              Area={camera.Area}
+              isVisible={camera.isVisible}
             />
           ))}
         </div>
       )}
       {Active && (
         <div className="absolute right-0 bg-gray-7 w-96 h-[100vh] pt-24">
-          {Camera.map(data => {
-            return (
-              <Mon_Card
-                {...data}
-              />
-            )
+          {Camera.map((data) => {
+            return <Mon_Card {...data} />;
           })}
         </div>
       )}
       {allert && (
         <div className="absolute left-44 p-12 text-lg font-semibold divide-y divide-gray-4 bg-gray-7 w-72 h-[100vh]">
-          <h1 className="text-center py-6 flex gap-4 place-items-center"><ExclamationTriangleIcon className="text-semantics-3 font-extrabold scale-150"/>Alert ON</h1>
-          <li className="py-4">
-            {}
-          </li>
+          <h1 className="text-center py-6 flex gap-4 place-items-center">
+            <ExclamationTriangleIcon className="text-semantics-3 font-extrabold scale-150" />
+            Alert ON
+          </h1>
+          <li className="py-4">{}</li>
         </div>
       )}
       <div className="py-0">
@@ -97,7 +111,7 @@ const MainLayout = () => {
           The React Framework – created and maintained by @vercel.
         </HoverCardContent>
       </HoverCard>
-      <Toast/>
+      <Toast />
     </div>
   );
 };
