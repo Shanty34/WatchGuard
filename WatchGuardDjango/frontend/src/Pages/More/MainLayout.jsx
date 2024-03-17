@@ -36,8 +36,9 @@ const MainLayout = () => {
   const { cameraVisibility, toggleCameraVisibility } = useDashboardContext();
   return (
     <div className="bg-gray-9 text-gray-5 flex">
-      <div className="bg-gray-7 h-[100vh] py-12 border-e-2 w-44">
-        <h1 className="text-2xl font-bold text-center py-6">LOGO!</h1>
+      <div className="bg-gray-7 h-[100vh] py-12 px-4 border-e-2 w-52">
+        <img src="https://cdn-icons-png.flaticon.com/512/4017/4017956.png" />
+        <h1 className="text-2xl font-bold text-center py-6">WatchGuard</h1>
         <div className="grid grid-flow-row gap-4">
           <Link
             to="/"
@@ -69,7 +70,7 @@ const MainLayout = () => {
         Add more conditions for other pages as needed */}
       </div>
       {isButtonActive("/") && (
-        <div className="bg-gray-7 w-72 h-[100vh]">
+        <div className="bg-gray-7 w-96 h-[100vh]">
           {cameraVisibility.map((camera) => (
             <Dash_Card
               key={camera.slugs}
@@ -81,7 +82,7 @@ const MainLayout = () => {
         </div>
       )}
       {Active && (
-        <div className="absolute right-0 bg-gray-7 w-96 h-[100vh] pt-24">
+        <div className="absolute right-0 bg-gray-7 w-72 h-[100vh] pt-24">
           {Camera.map((data) => {
             return <Mon_Card {...data} />;
           })}
@@ -105,7 +106,7 @@ const MainLayout = () => {
             <AvatarImage src="https://github.com/shadcn.png" />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
-          User_Name
+          Security Dashboard
         </HoverCardTrigger>
         <HoverCardContent>
           The React Framework – created and maintained by @vercel.

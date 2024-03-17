@@ -1,6 +1,7 @@
 import cv2
 import threading
 import os
+import datetime
 
 
 class VideoCamera(object):
@@ -30,6 +31,16 @@ class VideoCamera(object):
             )
             for x, y, w, h in faces:
                 cv2.rectangle(self.frame, (x, y), (x + w, y + h), (255, 0, 0), 2)
+                datetime.datetime.now().strftime("%A %d %B %Y %I:%M:%S%p")
+                cv2.putText(
+                    self.frame,
+                    datetime.datetime.now().strftime("%A %d %B %Y %I:%M:%S%p"),
+                    (10, self.frame.shape[0] - 10),
+                    cv2.FONT_HERSHEY_SIMPLEX,
+                    0.35,
+                    (0, 0, 255),
+                    1,
+                )
                 # Save the frame as an image
 
                 if not os.path.exists("Sus/Threat.jpg"):

@@ -22,7 +22,7 @@ export default function Monitoring() {
     axios.get("http://localhost:8000/inform/");
   }
   return (
-    <div className="grid grid-row-2 place-items-center w-[80vw] h-[100vh]">
+    <div className="grid grid-row-2 place-items-center w-[58vw] h-[100vh]">
       <div className="bg-gray-6 aspect-video w-[44vw]">
         {/* <img src="http://localhost:8000/video_feed" alt="" /> */}
         <VideoFeed />
