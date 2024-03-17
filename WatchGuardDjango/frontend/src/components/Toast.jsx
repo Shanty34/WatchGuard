@@ -17,6 +17,7 @@ function Toast(props) {
       const response = res.data.status;
       if (response === 1) {
         clearInterval(intervalId); // Stop the interval
+        clearInterval(intervalId); // Stop the interval
         setAlert(response);
         toast("Threat Detected!", {
           description: alert,
@@ -33,7 +34,7 @@ function Toast(props) {
   };
 
   // Call the function to check the alert periodically
-  const intervalId = setInterval(checkAlert, 1000); // Check every second
+  const intervalId = setInterval(checkAlert, 5000); // Check every second
 
   // const updateLogFile = () => {
   //   axios
