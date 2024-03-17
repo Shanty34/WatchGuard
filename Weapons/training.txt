@@ -1,0 +1,4 @@
+Trained model using yolov8.
+Exported the best.pt file into Onnx format to be used in the object detection model.
+
+Drive link for best.onnx file: https://drive.google.com/file/d/1-RX86g0j3UkAHinFAbsT9Jnq3CW6efU-/view?usp=sharing
