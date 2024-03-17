@@ -5,7 +5,7 @@ from yolov8 import YOLOv8
 # Initialize the webcam
 cap = cv2.VideoCapture(0)
 
-# Initialize YOLOv7 object detector
+# Initialize YOLOv8 object detector
 model_path = "C:/Users/hp/Desktop/best.onnx"
 yolov8_detector = YOLOv8(model_path, conf_thres=0.5, iou_thres=0.5)
 

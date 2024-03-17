@@ -1,0 +1,6 @@
+path: ../drive/MyDrive/yolov4 #enter the folder name where you will store data.yml
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+nc: 1
+names: ["Weapon"]
