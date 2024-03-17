@@ -1,3 +1,4 @@
+import winsound
 from django.shortcuts import render, redirect
 from django.http import StreamingHttpResponse, HttpResponse, JsonResponse
 import pywhatkit
@@ -29,7 +30,6 @@ import os
 
 def alert(request):
     if os.path.exists("Sus/Threat.jpg"):
-        import winsound
 
         frequency = 2500  # Set Frequency To 2500 Hertz
         duration = 500

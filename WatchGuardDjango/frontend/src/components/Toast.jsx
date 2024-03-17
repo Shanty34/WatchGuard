@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Toaster, toast } from "sonner";
 import axios from "axios";
-import fs from "fs";
 
 function Toast(props) {
   const handleReportClick = () => {
