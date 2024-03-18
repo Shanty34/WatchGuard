@@ -63,5 +63,5 @@ def video_feed(request):
 
 def inform(request):
     if os.path.exists("Sus/Threat.jpg"):
-        pywhatkit.sendwhats_image("+918750970535", "Sus/Threat.jpg", "Threat Detected!")
+        pywhatkit.sendwhats_image(number, "Sus/Threat.jpg", "Threat Detected!")
     return HttpResponse(200)
