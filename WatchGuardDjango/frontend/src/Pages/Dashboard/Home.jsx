@@ -15,9 +15,9 @@ export default function Home() {
   const { cameraVisibility } = useDashboardContext();
 
   return (
-    <div className="grid grid-cols-3 py-12 px-44 place-items-center w-[70vw] h-full">
+    <div className="grid grid-cols-3 py-12 px-12 place-items-center w-[70vw] min-h-screen">
       {cameraVisibility.map((camera) => (
-        <Dash_Cam
+        <Dash_Cam 
           key={camera.slugs}
           slugs={camera.slugs}
           Area={camera.Area}

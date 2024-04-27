@@ -17,4 +17,5 @@ export const Camera = [
     isVisible: false,
     Area: "Office 1",
   },
+  
 ];

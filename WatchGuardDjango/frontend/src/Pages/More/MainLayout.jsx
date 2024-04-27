@@ -16,6 +16,7 @@ import { Camera } from "../../assets/Camera";
 import { useDashboardContext } from "../Dashboard/DashboardContext";
 import { Toaster, toast } from "sonner";
 import Toast from "../../components/Toast";
+import { Badge } from "../../components/ui/badge";
 
 const MainLayout = () => {
   const [allert, setAlert] = useState(false);
@@ -36,7 +37,7 @@ const MainLayout = () => {
   const { cameraVisibility, toggleCameraVisibility } = useDashboardContext();
   return (
     <div className="bg-gray-9 text-gray-5 flex">
-      <div className="bg-gray-7 h-[100vh] py-12 px-4 border-e-2 w-52">
+      <div className="fixed left-0 z-10 bg-gray-7 h-[100vh] py-12 px-4 border-e-2 w-52">
         <img src="https://cdn-icons-png.flaticon.com/512/4017/4017956.png" />
         <h1 className="text-2xl font-bold text-center py-6">WatchGuard</h1>
         <div className="grid grid-flow-row gap-4">
@@ -45,7 +46,7 @@ const MainLayout = () => {
             className={buttonVariants({
               variant: "outline",
               size: "lg",
-              className: "flex gap-2",
+              className: "flex gap-2 bg-transparent",
             })}
           >
             <HomeIcon /> Dashboard
@@ -55,7 +56,7 @@ const MainLayout = () => {
             className={buttonVariants({
               variant: "outline",
               size: "lg",
-              className: "flex gap-2",
+              className: "flex gap-2 bg-transparent",
             })}
           >
             <PiTelevisionSimpleFill /> Monitoring
@@ -70,7 +71,7 @@ const MainLayout = () => {
         Add more conditions for other pages as needed */}
       </div>
       {isButtonActive("/") && (
-        <div className="bg-gray-7 w-96 h-[100vh]">
+        <div className="overflow-y-scroll pl-48 bg-gray-7 w-full min-h-screen">
           {cameraVisibility.map((camera) => (
             <Dash_Card
               key={camera.slugs}
@@ -100,18 +101,13 @@ const MainLayout = () => {
       <div className="py-0">
         <Outlet />
       </div>
-      <HoverCard>
-        <HoverCardTrigger className="absolute right-5 top-5 flex cursor-pointer items-center gap-2">
-          <Avatar>
+      <div className="z-10 fixed top-5 right-5 flex place-items-center gap-2">
+      <Avatar>
             <AvatarImage src="https://github.com/shadcn.png" />
-            <AvatarFallback>CN</AvatarFallback>
+            <AvatarFallback className="text-gray-10">CN</AvatarFallback>
           </Avatar>
-          Security Dashboard
-        </HoverCardTrigger>
-        <HoverCardContent>
-          The React Framework – created and maintained by @vercel.
-        </HoverCardContent>
-      </HoverCard>
+          <Badge variant="outline" className="text-md text-gray-2">Security Dashboard</Badge>
+      </div>
       <Toast />
     </div>
   );

@@ -15,8 +15,8 @@ export function Dash_Card(props) {
   };
 
   return (
-    <div className="grid grid-flow-col gap-2 py-2 px-2 hover:bg-gray-6">
-      <div className="p-1 rounded-lg bg-base-accent aspect-square grid place-items-center">
+    <div className="grid grid-flow-col place-items-center gap-2 py-2 px-2 hover:bg-gray-6">
+      <div className="w-24 rounded-lg bg-base-accent aspect-square grid place-items-center scale-75">
         <CameraIcon className="scale-150" />
       </div>
       <div>
@@ -24,7 +24,7 @@ export function Dash_Card(props) {
         <Badge className="border-0 px-2 text-sm letter-2">{props.Area}</Badge>
       </div>
       {/* Use Switch component and handleSwitchClick function */}
-      <Switch id="airplane-mode" onClick={handleToggleVisibility} />
+      <Switch id="airplane-mode" onClick={handleToggleVisibility}  />
     </div>
   );
 }
@@ -48,17 +48,13 @@ export function Dash_Cam(props) {
     <div>
       {props.isVisible && (
         <Link to={`/monitor/${props.slugs}`}>
-          <HoverCard>
-            <HoverCardTrigger>
-              <div className="aspect-square bg-gray-6 rounded-xl p-12">
+              <div className="aspect-video bg-gray-6 rounded-xl p-24 grid place-items-center">
                 <CameraIcon className="scale-150" />
               </div>
-              <Badge variant="outline" className="text-sm">
+              {/* Trigger changes the variant of badge to destructive */}
+              <Badge variant="outline" className="text-sm text-gray-5">
                 {props.Area}
               </Badge>
-              <HoverCardContent>{props.slugs}</HoverCardContent>
-            </HoverCardTrigger>
-          </HoverCard>
         </Link>
       )}
     </div>

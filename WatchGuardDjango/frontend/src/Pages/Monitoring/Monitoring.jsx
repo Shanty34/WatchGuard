@@ -22,64 +22,62 @@ export default function Monitoring() {
     axios.get("http://localhost:8000/inform/");
   }
   return (
-    <div className="grid grid-row-2 place-items-center w-[58vw] h-[100vh]">
-      <div className="bg-gray-6 aspect-video w-[44vw]">
-        {/* <img src="http://localhost:8000/video_feed" alt="" /> */}
-        <VideoFeed />
-      </div>
-      <div className="">
-        <AlertDialog className="bg-gray-9">
-          {isActive && (
-            <AlertDialogTrigger asChild>
-              <Button
-                variant="secondary"
-                size="lg"
-                className="py-6 bg-semantics-3 text-lg text-semantics-2 font-bold"
-              >
-                Report Crime !
-              </Button>
-            </AlertDialogTrigger>
-          )}
-          {!isActive && (
-            <AlertDialogTrigger asChild>
-              <Button size="lg" className=" text-lg py-6 bg-gray-6 font-bold">
-                Report Crime !
-              </Button>
-            </AlertDialogTrigger>
-          )}
-          <AlertDialogContent className="bg-gray-7 text-gray-5">
-            <AlertDialogHeader>
-              <AlertDialogTitle className="flex place-items-center gap-4">
-                <div className="border-2 border-gray-5 rounded-full p-4">
-                  <ExclamationTriangleIcon className="text-semantics-3 scale-150" />
-                </div>{" "}
-                Report Crime Detected !
-              </AlertDialogTitle>
-              <AlertDialogDescription>
-                Remember, Reporting the Crime in time is essential for safety
-              </AlertDialogDescription>
-            </AlertDialogHeader>
-            <AlertDialogFooter className="flex gap-2 place-items-center">
-              <AlertDialogCancel className="hover:bg-gray-5 hover:text-gray-10">
-                Cancel
-              </AlertDialogCancel>
-              <AlertDialogAction
-                onClick={handleClick}
-                className="bg-semantics-1 flex gap-2"
-              >
-                <FaWhatsapp className="scale-150" />
-                Inform Police
-              </AlertDialogAction>
-              <AlertDialogAction
-                onClick={handleClick}
-                className="bg-semantics-2 flex gap-2"
-              >
-                <FaWhatsapp className="scale-150" />
-                Inform Building Members
-              </AlertDialogAction>
-            </AlertDialogFooter>
-          </AlertDialogContent>
-        </AlertDialog>
+    <div className="grid place-items-center w-screen min-h-screen">
+      <div className="grid grid-row-2 gap-24 place-items-center">
+
+        <div className="bg-gray-6 aspect-video w-[50vw]">
+          {/* <img src="http://localhost:8000/video_feed" alt="" /> */}
+          <VideoFeed />
+        </div>
+
+        <div className="">
+          <AlertDialog className="bg-gray-9">
+            {!isActive && (
+                <Button size="lg" variant={"disabled"} className="">
+                  Report Crime !
+                </Button>
+            )}
+            {isActive && (
+              <AlertDialogTrigger asChild>
+                <Button size="lg" variant={"alert"} className="">
+                  Report Crime !
+                </Button>
+              </AlertDialogTrigger>
+            )}
+            <AlertDialogContent className="bg-gray-7 text-gray-5">
+              <AlertDialogHeader>
+                <AlertDialogTitle className="flex place-items-center gap-4">
+                  <div className="border-2 border-gray-5 rounded-full p-4">
+                    <ExclamationTriangleIcon className="text-semantics-3 scale-150" />
+                  </div>{" "}
+                  Report Crime Detected !
+                </AlertDialogTitle>
+                <AlertDialogDescription>
+                  Remember, Reporting the Crime in time is essential for safety
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter className="flex gap-2 place-items-center">
+                <AlertDialogCancel className="hover:bg-gray-5 bg-transparent hover:text-gray-10">
+                  Cancel
+                </AlertDialogCancel>
+                <AlertDialogAction
+                  onClick={handleClick}
+                  className="bg-semantics-1 flex gap-2"
+                >
+                  <FaWhatsapp className="scale-150" />
+                  Inform Police
+                </AlertDialogAction>
+                <AlertDialogAction
+                  onClick={handleClick}
+                  className="bg-semantics-2 flex gap-2"
+                >
+                  <FaWhatsapp className="scale-150" />
+                  Inform Building Members
+                </AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
+        </div>
       </div>
     </div>
   );
