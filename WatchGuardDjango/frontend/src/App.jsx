@@ -2,6 +2,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./Pages/Dashboard/Home";
 import MainLayout from "./Pages/More/MainLayout";
 import Monitoring from "./Pages/Monitoring/Monitoring";
+import Monitor from "./Pages/Monitoring/Monitor";
 export default function App(){
     const router = createBrowserRouter([
         {
@@ -14,6 +15,7 @@ export default function App(){
             },
             {
               path: "/monitor",
+              element:<Monitor/>,
               children:[
                 {
                   

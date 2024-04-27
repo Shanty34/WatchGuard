@@ -1,11 +1,11 @@
 import React from "react";
 
-import { Switch } from "@/components/ui/switch";
 import { Badge } from "@/components/ui/badge";
 import { CameraIcon } from "@radix-ui/react-icons";
 import { useDashboardContext } from "../Pages/Dashboard/DashboardContext";
 import { Link } from "react-router-dom";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
+import { Switch } from "@material-tailwind/react";
 
 export function Dash_Card(props) {
   const { cameraVisibility, toggleCameraVisibility } = useDashboardContext();
@@ -24,7 +24,7 @@ export function Dash_Card(props) {
         <Badge className="border-0 px-2 text-sm letter-2">{props.Area}</Badge>
       </div>
       {/* Use Switch component and handleSwitchClick function */}
-      <Switch id="airplane-mode" onClick={handleToggleVisibility}  />
+      <Switch color="blue" onClick={handleToggleVisibility}  />
     </div>
   );
 }
