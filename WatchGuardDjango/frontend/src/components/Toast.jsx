@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Toaster, toast } from "sonner";
 import axios from "axios";
+import { useDashboardContext } from "../Pages/Dashboard/DashboardContext";
 
 function Toast(props) {
   const handleReportClick = () => {
@@ -9,10 +10,12 @@ function Toast(props) {
   };
 
   const [alert, setAlert] = useState("");
+  const{handleAlert}=useDashboardContext();
 
   const checkAlert = () => {
     axios.get("http://localhost:8000/alert/").then((res) => {
       console.log(res.data);
+      handleAlert()
       const response = res.data.status;
       if (response === 1) {
         clearInterval(intervalId); // Stop the interval

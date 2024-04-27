@@ -15,9 +15,10 @@ import { ExclamationTriangleIcon } from "@radix-ui/react-icons";
 import { FaWhatsapp } from "react-icons/fa";
 import VideoFeed from "../../components/VideoFeed";
 import axios from "axios";
+import { useDashboardContext } from "../Dashboard/DashboardContext";
 
 export default function Monitoring() {
-  const [isActive, setisActive] = useState(false);
+  const {Alert,handleAlert}=useDashboardContext();
   function handleClick() {
     axios.get("http://localhost:8000/inform/");
   }
@@ -32,12 +33,12 @@ export default function Monitoring() {
 
         <div className="">
           <AlertDialog className="bg-gray-9">
-            {!isActive && (
+            {!Alert && (
                 <Button size="lg" variant={"disabled"} className="">
                   Report Crime !
                 </Button>
             )}
-            {isActive && (
+            {Alert && (
               <AlertDialogTrigger asChild>
                 <Button size="lg" variant={"alert"} className="">
                   Report Crime !

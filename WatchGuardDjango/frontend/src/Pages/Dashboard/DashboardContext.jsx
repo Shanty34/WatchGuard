@@ -7,7 +7,7 @@ export const useDashboardContext = () => useContext(DashboardContext);
 
 export const DashboardProvider = ({ children }) => {
   const [cameraVisibility, setCameraVisibility] = useState(Camera);
-
+  const [Alert,setAlert]=useState(false)
   const toggleCameraVisibility = (slug) => {
     setCameraVisibility((prevVisibility) =>
       prevVisibility.map((camera) =>
@@ -15,9 +15,12 @@ export const DashboardProvider = ({ children }) => {
       )
     );
   };
+  const handleAlert=()=>{
+    setAlert(true)
+  }
 
   return (
-    <DashboardContext.Provider value={{ cameraVisibility, toggleCameraVisibility }}>
+    <DashboardContext.Provider value={{ cameraVisibility, toggleCameraVisibility ,handleAlert,Alert }}>
       {children}
     </DashboardContext.Provider>
   );
