@@ -50,16 +50,6 @@ npm start
 ```
 6. Access the system at `http://localhost:3000`
 
-## Deployment
-
-The system can be deployed using a variety of methods, including:
-
-- Heroku
-- AWS
-- Google Cloud
-- Azure
-
-Refer to the documentation for each platform for specific deployment instructions.
 
 ## Built With
 
@@ -82,10 +72,3 @@ See also the list of [contributors](https://github.com/username/surveillance-sys
 
 This project is licensed under the MIT License - see the [LICENSE.md](https://gist.github.com/PurpleBooth/LICENSE.md) file for details
 
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
-
-[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
