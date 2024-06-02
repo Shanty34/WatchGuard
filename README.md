@@ -26,7 +26,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 1. Clone the repository:
 ```
-git clone https://github.com/username/surveillance-system.git
+git clone https://github.com/Shanty34/WatchGuard.git
 ```
 2. Create a virtual environment and activate it:
 ```
@@ -37,7 +37,6 @@ venv\Scripts\activate (for Windows)
 3. Install the dependencies:
 ```
 pip install -r requirements.txt
-cd frontend
 npm install
 ```
 4. Run the Django server:
