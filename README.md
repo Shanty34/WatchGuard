@@ -58,13 +58,12 @@ npm start
 - [scikit-learn](https://scikit-learn.org/) - Machine learning library
 - [TensorFlow](https://www.tensorflow.org/) - Machine learning library
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Authors
 
-- **[Your Name]** - _Initial work_ - [Your GitHub profile](https://github.com/username)
+- **[Azeem Idrisi](https://github.com/AzeemIdrisi)** 
+- **[Mridul Tiwari](https://github.com/MridulTi)** 
+- **[Shantanu Pant](https://github.com/shanty34)** 
 
 See also the list of [contributors](https://github.com/username/surveillance-system/contributors) who participated in this project.
 
